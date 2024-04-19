@@ -1,0 +1,348 @@
+body {
+    background-color: #FFC814;
+    background-image: linear-gradient(to bottom,  #FFC814, #FEF6BC);
+    overflow-y: hidden;
+}
+
+#col1 {
+    height: 100vh;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p, .brand pre {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.brand pre {
+    font-size: large; 
+}
+
+.logo {
+    margin: 15% 10%;
+    padding-bottom: 2px;
+    background-color: white;
+    border-radius: 100%;
+    padding: 1px;
+}
+
+.logo img {
+    width: 95%;
+    height: 95%;
+    margin-left: 10px;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    height: 60px;
+    width: 150px;
+    margin-left: 50px;
+    padding-right: 20px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link:hover {
+    color: black;
+    padding-right: 40px;
+    padding-left: 45px;
+    background-color: #FFA626;
+    height: 57px;  
+    border-radius: 0px 10px 10px 0px;
+}
+
+.nav-item .nav-icon {
+    width: 70px;
+    height: 60px;
+    background-color: #FF8B00;
+    padding: 6px;
+    border-radius: 25px;
+    position: absolute;
+    z-index: 1;
+}
+
+.nav-item img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-left: 4px;
+}
+
+.logout-button button {
+    background-color: #FF8B00;
+    color: rgb(0, 0, 0);
+    padding: 10px 50px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 80px;
+    margin-left: 45.5px;
+}
+
+.logout-button button:hover {
+    background-color: #FFA626;
+}
+
+#col2 {
+    margin: 10px 20px 20px 20px;
+    border-radius: 5%;
+    background-color:#FEFFDB;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+hr {
+    background-color: rgb(0, 0, 0, 1);
+    height: 5px;
+}
+
+button {
+    background-color: #FF8B00;
+    border: none;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    width: 150px;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.filter {
+    border: none;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    width: 200px;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.filter:hover, .bl1:hover {
+    background-color: #FFA626; /* Darker color for hover effect */
+}
+
+.button-container {
+    display: flex;
+    justify-content: last baseline;
+    margin-bottom: 15px;/* Adjust this value to increase or decrease the space between buttons */
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 200px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+.bl1 {
+    margin-left: 793px;
+    width: 200px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.title {
+    font-size: 40px;
+}
+
+.table-container {
+    width: auto;
+    height: 480px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #FFC60D transparent;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #000;
+    
+}
+
+#item-table th {
+    position: sticky;
+    top: 0;
+    background-color: #FEFFDB;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center; /* Center-align text */
+    vertical-align: middle; /* Center-align vertically */
+}
+
+#item-table img, td img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    max-width: 100px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 12% auto;
+    margin-right: 0px;
+    margin-left: 580px;
+    padding: 15px;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close {
+    margin-left: 97%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#addItemBtn{
+    background-color: #FFC60D;
+    margin-top: px;
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#addForm button[type="submit"]:hover {
+    background-color: #FFA626;
+}
+
+
+#addForm input[type="text"]{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+}
+
+
+#editForm input[type="text"] {
+    width: 100%;
+    display: block;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+
+#editForm button[type="submit"] {
+    background-color: #FFC60D;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#editForm button[type="submit"]:hover {
+    background-color: #FFA626;
+}
+
+#editEmployeeDropdown {
+    display: none;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    flex: 1;
+    outline: none;
+    border: none;
+}
+
+.nav-link.active {
+    background-color: #FFA626; /* Your desired highlight color */
+    color: rgb(0, 0, 0);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.edit-button, .delete-button {
+    margin-top: 4px;
+    width: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent;
+}
+
+.edit-button:hover {
+    background-color: #007bff;
+    color: rgb(0, 0, 0);
+}
+
+.delete-button:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+td.actions{
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    margin-top: -1px;
+}
+
+#item-table {
+    width: 100%;
+    table-layout: fixed;
+}
+

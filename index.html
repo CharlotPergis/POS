@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="icon" href="/IMG/Juls Logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="pm.css">
+</head>
+<body>
+
+<div class="container-fluid" id="page">
+    <div class="row">
+        <div class="col-3" id="col1">
+            <div class="logo">
+                <img src="Juls Logo.png" alt="Logo">
+            </div>
+            <div class="brand">
+                <pre>Juls Burgers
+& Fruitshake</pre>
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <div class="nav-icon">
+                        <img src="home.png" alt="home">
+                    </div>
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-icon">
+                        <img src="burger.png" alt="products">
+                    </div>
+                    <a class="nav-link" id="active" href="index.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-icon">
+                        <img src="employee.png" alt="employees">
+                    </div>
+                    <a class="nav-link" id="active" href="em.html">Employees</a>
+                </li>
+                <div class="logout-button">
+                    <button>Logout</button>
+                </div>
+            </ul>
+        </div>
+        <div class="col" id="col2">
+            <div class="title">
+                <p>Product Management</p>
+                <hr>
+            </div>
+            <div class="button-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="dropdown">
+                            <button class="filter" onclick="toggleDropdown()">Filter By</button>
+                            <div id="filterDropdown" class="dropdown-content">
+                                <a href="#">Category</a>
+                                <a href="#">Price</a>
+                                <a href="#">Availability</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="bl1">Add Item</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="bl">Add Category</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="table-container">
+                <table id="item-table">
+                    <thead>
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Item</h2>
+        <form id="editForm">
+            <input type="hidden" id="editItemCode" name="editItemCode">
+            <!--<label for="editItemDropdown">Select Item:</label>-->
+            <select id="editItemDropdown">
+                <!--Dropdown options will be dynamically populated here --> 
+            </select>
+            <br>
+            <label for="editItemName">Item Name:</label>
+            <input type="text" id="editItemName" name="editItemName">
+            <label for="editItemPrice">Price:</label>
+            <input type="text" id="editItemPrice" name="editItemPrice" onkeypress="return isNumberKey(event)" pattern="[0-9]*">
+            <label for="editItemStatus">Status:</label>
+            <input type="text" id="editItemStatus" name="editItemStatus">
+            <label for="editItemStatus">Image:</label>
+            <input type="file" id="editItemImage" name="editItemImage">
+            <!-- Add input fields for other attributes as needed -->
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<div id="addModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add New Item</h2>
+        <form id="addForm">
+            <label for="addItemName" id="itemName">Item Name:</label>
+            <input type="text" id="addItemName" name="addItemName">
+            <label for="addItemPrice">Price:</label>
+            <input type="text" id="addItemPrice" name="addItemPrice" onkeypress="return isNumberKey(event)" pattern="\d+(\.\d+)?" title="Please enter a valid number">
+            <label for="addItemStatus">Status:</label>
+            <input type="text" id="addItemStatus" name="addItemStatus">
+            <label for="addItemImage">Image:</label>
+            <input type="file" id="addItemImage" name="addItemImage" accept="image/*">
+            <!-- Add input fields for other attributes as needed -->
+            <button type="submit" id="addItemBtn">Add Item</button>
+        </form>
+    </div>
+</div>
+
+<div id="addCategoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add New Category</h2>
+        <form id="addCategoryForm">
+            <label for="addCategoryName">Category Name:</label>
+            <input type="text" id="addCategoryName" name="addCategoryName">
+            <button type="submit" id="AC">Add Category</button>
+        </form>
+
+        <h3>Existing Categories</h3>
+        <table id="categoryTable">
+            <tbody id="categoryTableBody">
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<script src="pm.js"></script>
+
+</body>
+</html>
